@@ -1,125 +1,155 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Welcome To Poki Adventure</title>
+<meta charset="UTF-8">
+<title>Cobblemon Adventure Server</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #1e1e2f;
-      color: white;
-      text-align: center;
-    }
+<style>
 
-    header {
-      background: linear-gradient(90deg,#4CAF50,#2ecc71);
-      padding: 40px;
-    }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  text-align: center;
+  background: linear-gradient(-45deg,#1e1e2f,#16213e,#0f3460,#1e1e2f);
+  background-size: 400% 400%;
+  animation: bgMove 12s ease infinite;
+}
 
-    h1 {
-      margin: 0;
-      font-size: 40px;
-    }
+@keyframes bgMove {
+  0% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+  100% {background-position:0% 50%;}
+}
 
-    .section {
-      padding: 40px 20px;
-    }
+header {
+  padding: 70px 20px;
+}
 
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
+h1 {
+  font-size: 48px;
+  text-shadow: 0 0 15px #00ff88;
+}
 
-    .card {
-      background: #2b2b40;
-      padding: 20px;
-      border-radius: 12px;
-      width: 250px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    }
+.section {
+  padding: 50px 20px;
+}
 
-    img {
-      width: 100%;
-      border-radius: 10px;
-    }
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
 
-    .button {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 20px;
-      background: #4CAF50;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-    }
+.card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  width: 260px;
+  padding: 20px;
+  transition: 0.3s;
+}
 
-    .button:hover {
-      background: #45a049;
-    }
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 0 20px #00ff88;
+}
 
-    footer {
-      background: #111;
-      padding: 20px;
-      margin-top: 30px;
-    }
-  </style>
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.button {
+  display: inline-block;
+  margin: 12px;
+  padding: 14px 24px;
+  border-radius: 10px;
+  background: #00c853;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.button:hover {
+  background: #00ff88;
+  box-shadow: 0 0 15px #00ff88;
+}
+
+.status {
+  background: rgba(0,0,0,0.4);
+  display: inline-block;
+  padding: 15px 25px;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+footer {
+  background: rgba(0,0,0,0.6);
+  padding: 25px;
+  margin-top: 40px;
+}
+
+</style>
 </head>
 
 <body>
 
 <header>
-  <h1>🌎 Poki Adventure</h1>
-  <p>Catch • Battle • Explore • Build</p>
+  <h1>🌎 Cobblemon Adventure</h1>
+  <p>Catch • Battle • Explore • Become Champion</p>
 
   <a class="button" href="#">Join Server</a>
   <a class="button" href="#">Discord</a>
+
+  <div class="status">
+    🟢 Server Online | IP: play.yourserver.com
+  </div>
 </header>
 
 <div class="section">
-  <h2>✨ What We Offer</h2>
+<h2>✨ What We Offer</h2>
 
-  <div class="features">
+<div class="features">
 
-    <div class="card">
-      <img src="https://cdn.discordapp.com/attachments/415359426292219905/1452830607775240252/2025-12-22_17.03.22.png?ex=699cfa71&is=699ba8f1&hm=9c27192a5ba4bce1b2966369ad27283beb3a09a62316aba4a288e8b9cc9d1be6&">
-      <h3>Custom Gyms</h3>
-      <p>Challenge player-run gyms and earn badges!</p>
-    </div>
+<div class="card">
+<img src="https://via.placeholder.com/260x150">
+<h3>🏆 Custom Gyms</h3>
+<p>Earn badges and challenge powerful leaders.</p>
+</div>
 
-    <div class="card">
-      <img src="file_00000000661071fdaeb88ee923aa3a4d.png">
-      <h3>Friendly Community</h3>
-      <p>Active players and helpful staff.</p>
-    </div>
+<div class="card">
+<img src="https://via.placeholder.com/260x150">
+<h3>⚔️ Tournaments</h3>
+<p>Weekly PvP events and seasonal championships.</p>
+</div>
 
-    <div class="card">
-      <img src="https://via.placeholder.com/250x150">
-      <h3>Events & Tournaments</h3>
-      <p>Weekly battles, giveaways, and competitions.</p>
-    </div>
+<div class="card">
+<img src="https://via.placeholder.com/260x150">
+<h3>🏡 Survival World</h3>
+<p>Build bases and explore with friends.</p>
+</div>
 
-    <div class="card">
-      <img src="IMG_20260220_211942.png">
-      <h3>Survival + Cobblemon</h3>
-      <p>Explore, build bases, and catch Pokémon together.</p>
-    </div>
+<div class="card">
+<img src="https://via.placeholder.com/260x150">
+<h3>🎁 Custom Events</h3>
+<p>Legendary spawns, giveaways, and adventures.</p>
+</div>
 
-  </div>
+</div>
 </div>
 
 <div class="section">
-  <h2>🚀 How to Join</h2>
-  <p><strong>IP:</strong> play.yourserver.com</p>
-  <p>Install Cobblemon → Add Server → Start your adventure!</p>
+<h2>🚀 How To Join</h2>
+<p>1. Install Cobblemon</p>
+<p>2. Add our server IP</p>
+<p>3. Start your adventure!</p>
 </div>
 
 <footer>
-  <p>© 2026 Cobblemon Adventure Server</p>
+<p>© 2026 Cobblemon Adventure Server</p>
 </footer>
 
 </body>
