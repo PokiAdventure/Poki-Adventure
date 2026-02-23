@@ -1,19 +1,1 @@
-.card {
-  display: block;
-  text-decoration: none;   /* Remove link underline */
-  color: white;            /* Force all text inside to be white */
-  cursor: pointer;
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
-  width: 260px;
-  padding: 20px;
-  transition: 0.3s;
-}
-.card:hover h3 {
-  color: #00ff88;  /* Only the heading glows */
-}
 
-.card:hover p {
-  color: white;    /* Keep paragraph text white */
-}
