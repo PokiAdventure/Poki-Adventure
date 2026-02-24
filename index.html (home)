@@ -7,119 +7,135 @@
 <style>
 
 /* ===== GLOBAL ===== */
-body {
-  margin: 0;
-  font-family: "Trebuchet MS", Arial, sans-serif;
-  color: white;
-  text-align: center;
-  background: linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#0f2027);
-  background-size: 400% 400%;
-  animation: bgMove 14s ease infinite;
+body{
+  margin:0;
+  font-family:"Trebuchet MS",Arial;
+  color:white;
+  text-align:center;
+  background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#0f2027);
+  background-size:400% 400%;
+  animation:bgMove 14s ease infinite;
 }
 
-@keyframes bgMove {
-  0% {background-position:0% 50%;}
-  50% {background-position:100% 50%;}
-  100% {background-position:0% 50%;}
+@keyframes bgMove{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+/* ===== POKEDEX NAVBAR (NEW) ===== */
+.nav{
+  position:sticky;
+  top:0;
+  background:rgba(0,0,0,.7);
+  backdrop-filter:blur(10px);
+  padding:14px;
+  z-index:1000;
+  box-shadow:0 0 15px #00ff88;
+}
+
+.nav a{
+  color:white;
+  text-decoration:none;
+  margin:0 18px;
+  font-weight:bold;
+  transition:.3s;
+}
+
+.nav a:hover{
+  color:#00ff88;
+}
+
+/* ===== LEGENDARY ALERT ===== */
+.alert{
+  background:linear-gradient(90deg,#ff0000,#ff8800);
+  padding:10px;
+  font-weight:bold;
+  animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+  0%,100%{opacity:1;}
+  50%{opacity:.6;}
 }
 
 /* ===== HEADER ===== */
-header {
-  padding: 70px 20px;
-  position: relative;
+header{padding:70px 20px;}
+
+h1{
+  font-size:52px;
+  text-shadow:0 0 20px #00ff88;
 }
 
-h1 {
-  font-size: 52px;
-  letter-spacing: 2px;
-  text-shadow:
-    0 0 10px #00ff88,
-    0 0 25px #00ff88;
-}
-
-/* Pokeball divider */
-.divider {
-  width: 180px;
-  height: 6px;
-  margin: 25px auto;
-  background: linear-gradient(
-    to right,
-    red 0%,
-    red 45%,
-    white 45%,
-    white 55%,
-    red 55%,
-    red 100%);
-  border-radius: 5px;
+.divider{
+  width:180px;
+  height:6px;
+  margin:25px auto;
+  background:linear-gradient(to right,red 45%,white 45%,white 55%,red 55%);
+  border-radius:5px;
 }
 
 /* ===== BUTTONS ===== */
-.button {
-  display: inline-block;
-  margin: 12px;
-  padding: 14px 26px;
-  border-radius: 30px;
-  background: linear-gradient(45deg,#ff1e1e,#ffcc00);
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+.button{
+  display:inline-block;
+  margin:12px;
+  padding:14px 26px;
+  border-radius:30px;
+  background:linear-gradient(45deg,#ff1e1e,#ffcc00);
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+  transition:.3s;
 }
 
-.button:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 20px #ffcc00;
+.button:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 20px #ffcc00;
 }
 
-/* ===== TRAINER STATUS CARD ===== */
-.status {
-  background: rgba(0,0,0,0.5);
-  display: inline-block;
-  padding: 18px 30px;
-  border-radius: 15px;
-  margin-top: 20px;
-  border: 2px solid #00ff88;
-  box-shadow: 0 0 15px #00ff88;
+/* ===== STATUS ===== */
+.status{
+  background:rgba(0,0,0,.5);
+  padding:18px 30px;
+  border-radius:15px;
+  display:inline-block;
+  margin-top:20px;
+  border:2px solid #00ff88;
+  box-shadow:0 0 15px #00ff88;
 }
 
 /* ===== SECTIONS ===== */
-.section {
-  padding: 60px 20px;
+.section{padding:60px 20px;}
+
+h2{
+  font-size:34px;
+  text-shadow:0 0 10px #00ff88;
 }
 
-h2 {
-  font-size: 34px;
-  margin-bottom: 10px;
-  text-shadow: 0 0 10px #00ff88;
+/* ===== MAIN FEATURE BUTTONS (NEW) ===== */
+.mainButtons{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:28px;
 }
 
-/* ===== FEATURE CARDS ===== */
-.features {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
+.mainCard{
+  width:260px;
+  padding:25px;
+  border-radius:18px;
+  text-decoration:none;
+  color:white;
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(10px);
+  transition:.35s;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 0 15px rgba(0,255,136,.3);
 }
 
-.card * {
-  color: white !important;
-}
-
-.card {
-  position: relative;
-  overflow: hidden;
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(12px);
-  border-radius: 18px;
-  width: 260px;
-  padding: 20px;
-  transition: 0.35s;
-  border: 1px solid rgba(255,255,255,0.2);
-}
-
-/* shine animation */
-.card::before {
+/* shiny sweep */
+.mainCard::before{
   content:"";
   position:absolute;
   top:-120%;
@@ -129,43 +145,37 @@ h2 {
   background:linear-gradient(
     120deg,
     transparent,
-    rgba(255,255,255,0.3),
+    rgba(255,255,255,.35),
     transparent);
   transform:rotate(25deg);
-  transition:0.6s;
+  transition:.6s;
 }
 
-.card:hover::before {
+.mainCard:hover::before{
   top:100%;
   left:100%;
 }
 
-.card:hover {
-  transform: translateY(-12px) scale(1.04);
-  box-shadow: 0 0 25px #00ff88;
+.mainCard:hover{
+  transform:translateY(-12px) scale(1.05);
+  box-shadow:0 0 30px #00ff88;
 }
 
-.card img {
-  width: 100%;
-  border-radius: 12px;
-}
-
-/* ===== JOIN STEPS ===== */
-.join-box {
-  max-width: 700px;
-  margin: auto;
-  background: rgba(0,0,0,0.45);
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(0,255,136,0.4);
+/* ===== JOIN BOX ===== */
+.join-box{
+  max-width:700px;
+  margin:auto;
+  background:rgba(0,0,0,.45);
+  padding:30px;
+  border-radius:15px;
+  box-shadow:0 0 20px rgba(0,255,136,.4);
 }
 
 /* ===== FOOTER ===== */
-footer {
-  background: rgba(0,0,0,0.7);
-  padding: 25px;
-  margin-top: 50px;
-  font-size: 14px;
+footer{
+  background:rgba(0,0,0,.7);
+  padding:25px;
+  margin-top:50px;
 }
 
 </style>
@@ -173,21 +183,36 @@ footer {
 
 <body>
 
+<!-- LEGENDARY EVENT BANNER -->
+<div class="alert">
+🔥 Legendary Spawn Event This Weekend!
+</div>
+
+<!-- NAVBAR -->
+<div class="nav">
+<a href="index.html">Home</a>
+<a href="survival.html">Survival</a>
+<a href="gyms.html">Gyms</a>
+<a href="tournaments.html">Tournaments</a>
+<a href="events.html">Events</a>
+</div>
+
 <header>
-  <h1>🌎 Poki Adventure</h1>
-  <p>Catch • Battle • Explore • Become Champion</p>
+<h1>🌎 Poki Adventure</h1>
+<p>Catch • Battle • Explore • Become Champion</p>
 
-  <div class="divider"></div>
+<div class="divider"></div>
 
-  <a class="button" href="https://modrinth.com/app">⬇ Download Modrinth</a>
-  <a class="button" href="https://discord.gg/VQP8x2uk">💬 Join Discord</a>
+<a class="button" href="https://modrinth.com/app">⬇ Download Modrinth</a>
+<a class="button" href="https://discord.gg/VQP8x2uk">💬 Join Discord</a>
 
-  <div class="status">
-    🟢 Server Online<br>
-    <strong>IP:</strong> 64.87.39.105:25732
-  </div>
+<div class="status">
+🟢 Server Online<br>
+<strong>IP:</strong> 64.87.39.105:25732
+</div>
 </header>
-  
+
+<!-- FEATURE NAVIGATION -->
 <div class="section">
 
 <h2>🎮 Explore Poki Adventure</h2>
@@ -196,22 +221,22 @@ footer {
 
 <a href="tournaments.html" class="mainCard">
 <h3>🏆 Tournaments</h3>
-<p>Competitive battles and seasonal championships.</p>
+<p>Compete in official leagues and become Champion.</p>
 </a>
 
 <a href="gyms.html" class="mainCard">
 <h3>🏟 Custom Gyms</h3>
-<p>Challenge leaders and earn your badges.</p>
+<p>Earn badges and challenge player gym leaders.</p>
 </a>
 
 <a href="events.html" class="mainCard">
 <h3>🎉 Custom Events</h3>
-<p>Legendary hunts, giveaways, and server events.</p>
+<p>Legendary hunts, casino games, and server events.</p>
 </a>
 
 <a href="survival.html" class="mainCard">
 <h3>🌎 Survival World</h3>
-<p>Your true Cobblemon adventure begins here.</p>
+<p>Start with a Shiny starter and your chosen Legendary.</p>
 </a>
 
 </div>
@@ -221,10 +246,10 @@ footer {
 <h2>🚀 Begin Your Journey</h2>
 
 <div class="join-box">
-<p>1️⃣ Install the Modrinth App</p>
-<p>2️⃣ Install <strong>Cobbleverse</strong></p>
-<p>3️⃣ Add our Server IP</p>
-<p>4️⃣ Become Champion!</p>
+<p>✨ Choose a Shiny Starter (Gen 1–9)</p>
+<p>🔥 Select a Legendary Partner</p>
+<p>🎁 Daily Rewards & Dex Rewards</p>
+<p>🏆 Become Champion</p>
 </div>
 
 </div>
