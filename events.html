@@ -1,1 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Events | Poki Adventure</title>
 
+<style>
+
+/* ===== GLOBAL ===== */
+body{
+  margin:0;
+  font-family:"Trebuchet MS",Arial;
+  color:white;
+  text-align:center;
+  background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#0f2027);
+  background-size:400% 400%;
+  animation:bgMove 14s ease infinite;
+}
+
+@keyframes bgMove{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+/* ===== NAVBAR ===== */
+.nav{
+  position:sticky;
+  top:0;
+  background:rgba(0,0,0,.7);
+  backdrop-filter:blur(10px);
+  padding:14px;
+  z-index:1000;
+  box-shadow:0 0 15px #00ff88;
+}
+
+.nav a{
+  color:white;
+  text-decoration:none;
+  margin:0 18px;
+  font-weight:bold;
+  transition:.3s;
+}
+
+.nav a:hover{
+  color:#00ff88;
+}
+
+/* ===== HEADER ===== */
+header{
+  padding:70px 20px;
+}
+
+h1{
+  font-size:52px;
+  text-shadow:0 0 20px #00ff88;
+}
+
+.divider{
+  width:180px;
+  height:6px;
+  margin:25px auto;
+  background:linear-gradient(to right,red 45%,white 45%,white 55%,red 55%);
+  border-radius:5px;
+}
+
+/* ===== SECTIONS ===== */
+.section{
+  padding:60px 20px;
+}
+
+h2{
+  font-size:34px;
+  text-shadow:0 0 10px #00ff88;
+}
+
+/* ===== FEATURE CARDS ===== */
+.card{
+  width:300px;
+  padding:25px;
+  margin:20px;
+  border-radius:18px;
+  text-decoration:none;
+  color:white;
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(10px);
+  transition:.35s;
+  display:inline-block;
+  vertical-align:top;
+  box-shadow:0 0 15px rgba(0,255,136,.3);
+}
+
+.card:hover{
+  transform:translateY(-12px) scale(1.03);
+  box-shadow:0 0 30px #00ff88;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:rgba(0,0,0,.7);
+  padding:25px;
+  margin-top:50px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="nav">
+<a href="index.html">Home</a>
+<a href="survival.html">Survival</a>
+<a href="gyms.html">Gyms</a>
+<a href="tournaments.html">Tournaments</a>
+<a href="events.html">Events</a>
+</div>
+
+<header>
+<h1>🎉 Server Events</h1>
+<p>Weekly hunts, player events, and epic challenges await!</p>
+<div class="divider"></div>
+</header>
+
+<div class="section">
+<h2>🔍 Weekly Hunts</h2>
+<p>Every week, a special Pokémon will appear for trainers to hunt! Complete the hunt solo or participate in global hunts to earn rewards. Stay alert — the Pokémon may appear anywhere in the world!</p>
+</div>
+
+<div class="section">
+<h2>💡 Player-Created Events</h2>
+<p>We love ideas from our community! Players can suggest and help host unique events. This is your chance to contribute and make the server even more fun!</p>
+</div>
+
+<div class="section">
+<h2>🏰 Battle Tower</h2>
+<p>The ultimate challenge for trainers who have completed Gens 1–4! Face legendary trainers in the Battle Tower — only the strongest will make it to the top. Prepare for an extreme difficulty, strategic battles, and amazing rewards!</p>
+</div>
+
+<div class="section">
+<h2>📌 Summary</h2>
+<div class="card">
+<h3>Weekly Hunts</h3>
+<p>Solo and global hunts with special Pokémon and rewards.</p>
+</div>
+<div class="card">
+<h3>Player Events</h3>
+<p>Create and shape fun events with the community’s ideas.</p>
+</div>
+<div class="card">
+<h3>Battle Tower</h3>
+<p>Extreme challenge for top trainers with legendary opponents.</p>
+</div>
+<div class="card">
+<h3>Rewards</h3>
+<p>Earn exclusive prizes, trophies, and recognition for your achievements.</p>
+</div>
+</div>
+
+<footer>
+<p>© 2026 Poki Adventure Server — All Trainers Welcome</p>
+</footer>
+
+</body>
+</html>
