@@ -6,14 +6,15 @@
 
 <style>
 
+/* ===== GLOBAL ===== */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Trebuchet MS", Arial, sans-serif;
   color: white;
   text-align: center;
-  background: linear-gradient(-45deg,#1e1e2f,#16213e,#0f3460,#1e1e2f);
+  background: linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#0f2027);
   background-size: 400% 400%;
-  animation: bgMove 12s ease infinite;
+  animation: bgMove 14s ease infinite;
 }
 
 @keyframes bgMove {
@@ -22,19 +23,78 @@ body {
   100% {background-position:0% 50%;}
 }
 
+/* ===== HEADER ===== */
 header {
   padding: 70px 20px;
+  position: relative;
 }
 
 h1 {
-  font-size: 48px;
-  text-shadow: 0 0 15px #00ff88;
+  font-size: 52px;
+  letter-spacing: 2px;
+  text-shadow:
+    0 0 10px #00ff88,
+    0 0 25px #00ff88;
 }
 
+/* Pokeball divider */
+.divider {
+  width: 180px;
+  height: 6px;
+  margin: 25px auto;
+  background: linear-gradient(
+    to right,
+    red 0%,
+    red 45%,
+    white 45%,
+    white 55%,
+    red 55%,
+    red 100%);
+  border-radius: 5px;
+}
+
+/* ===== BUTTONS ===== */
+.button {
+  display: inline-block;
+  margin: 12px;
+  padding: 14px 26px;
+  border-radius: 30px;
+  background: linear-gradient(45deg,#ff1e1e,#ffcc00);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+.button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 20px #ffcc00;
+}
+
+/* ===== TRAINER STATUS CARD ===== */
+.status {
+  background: rgba(0,0,0,0.5);
+  display: inline-block;
+  padding: 18px 30px;
+  border-radius: 15px;
+  margin-top: 20px;
+  border: 2px solid #00ff88;
+  box-shadow: 0 0 15px #00ff88;
+}
+
+/* ===== SECTIONS ===== */
 .section {
-  padding: 50px 20px;
+  padding: 60px 20px;
 }
 
+h2 {
+  font-size: 34px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px #00ff88;
+}
+
+/* ===== FEATURE CARDS ===== */
 .features {
   display: flex;
   flex-wrap: wrap;
@@ -42,58 +102,70 @@ h1 {
   gap: 25px;
 }
 
-  .card * {
+.card * {
   color: white !important;
 }
-  
+
 .card {
+  position: relative;
+  overflow: hidden;
   background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
   width: 260px;
   padding: 20px;
-  transition: 0.3s;
+  transition: 0.35s;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* shine animation */
+.card::before {
+  content:"";
+  position:absolute;
+  top:-120%;
+  left:-120%;
+  width:200%;
+  height:200%;
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.3),
+    transparent);
+  transform:rotate(25deg);
+  transition:0.6s;
+}
+
+.card:hover::before {
+  top:100%;
+  left:100%;
 }
 
 .card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 0 20px #00ff88;
+  transform: translateY(-12px) scale(1.04);
+  box-shadow: 0 0 25px #00ff88;
 }
 
 .card img {
   width: 100%;
-  border-radius: 10px;
-}
-
-.button {
-  display: inline-block;
-  margin: 12px;
-  padding: 14px 24px;
-  border-radius: 10px;
-  background: #00c853;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.button:hover {
-  background: #00ff88;
-  box-shadow: 0 0 15px #00ff88;
-}
-
-.status {
-  background: rgba(0,0,0,0.4);
-  display: inline-block;
-  padding: 15px 25px;
   border-radius: 12px;
-  margin-top: 20px;
 }
 
+/* ===== JOIN STEPS ===== */
+.join-box {
+  max-width: 700px;
+  margin: auto;
+  background: rgba(0,0,0,0.45);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,255,136,0.4);
+}
+
+/* ===== FOOTER ===== */
 footer {
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.7);
   padding: 25px;
-  margin-top: 40px;
+  margin-top: 50px;
+  font-size: 14px;
 }
 
 </style>
@@ -105,56 +177,63 @@ footer {
   <h1>🌎 Poki Adventure</h1>
   <p>Catch • Battle • Explore • Become Champion</p>
 
-  <a class="button" href="https://modrinth.com/app">Modrinth App</a>
-  <a class="button" href="https://discord.gg/VQP8x2uk">Discord</a>
+  <div class="divider"></div>
+
+  <a class="button" href="https://modrinth.com/app">⬇ Download Modrinth</a>
+  <a class="button" href="https://discord.gg/VQP8x2uk">💬 Join Discord</a>
 
   <div class="status">
-    🟢 Server Online | IP: 64.87.39.105:25732
+    🟢 Server Online<br>
+    <strong>IP:</strong> 64.87.39.105:25732
   </div>
 </header>
 
 <div class="section">
-<h2>✨ What We Offer</h2>
+<h2>✨ Trainer Features</h2>
 
 <div class="features">
 
 <a href="https://discord.gg/VQP8x2uk" class="card">
-  <img src="https://cdn.discordapp.com/attachments/415359426292219905/1452830607775240252/2025-12-22_17.03.22.png?ex=699cfa71&is=699ba8f1&hm=9c27192a5ba4bce1b2966369ad27283beb3a09a62316aba4a288e8b9cc9d1be6&">
+  <img src="https://cdn.discordapp.com/attachments/415359426292219905/1452830607775240252/2025-12-22_17.03.22.png">
   <h3>🏆 Custom Gyms</h3>
   <p>Earn badges and challenge powerful leaders.</p>
 </a>
 
-<a class="card">
+<div class="card">
 <img src="ChatGPT Image Feb 22, 2026, 08_14_28 PM.png">
 <h3>⚔️ Tournaments</h3>
 <p>Monthly PvP events and seasonal championships.</p>
-</a>
+</div>
 
-<a class="card">
+<div class="card">
 <img src="file_00000000661071fdaeb88ee923aa3a4d.png">
 <h3>🏡 Survival World</h3>
 <p>Build bases and explore with friends.</p>
-</a>
+</div>
 
-<a class="card">
+<div class="card">
 <img src="IMG_20260220_211942.png">
 <h3>🎁 Custom Events</h3>
 <p>Legendary spawns, giveaways, and adventures.</p>
-</a>
+</div>
 
 </div>
 </div>
 
 <div class="section">
-<h2>🚀 How To Join</h2>
-<p>1. Install modrinth app</p> 
-<p>2. Install Cobbleverse</p>
-<p>3. Add our server IP</p>
-<p>4. Start your adventure!</p>
+<h2>🚀 Begin Your Journey</h2>
+
+<div class="join-box">
+<p>1️⃣ Install the Modrinth App</p>
+<p>2️⃣ Install <strong>Cobbleverse</strong></p>
+<p>3️⃣ Add our Server IP</p>
+<p>4️⃣ Become Champion!</p>
+</div>
+
 </div>
 
 <footer>
-<p>© 2026 Poki Adventure Server</p>
+<p>© 2026 Poki Adventure Server — All Trainers Welcome</p>
 </footer>
 
 </body>
