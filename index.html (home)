@@ -5,48 +5,6 @@
 <title>Poki Adventure Server</title>
 
 <style>
-/* NAVBAR */
-.nav{
-  background:#000000cc;
-  padding:15px;
-  position:sticky;
-  top:0;
-}
-
-.nav a{
-  color:white;
-  text-decoration:none;
-  margin:0 15px;
-  font-weight:bold;
-}
-
-.nav a:hover{
-  color:#00ff88;
-}
-
-/* MAIN BUTTONS */
-.mainButtons{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:25px;
-}
-
-.mainCard{
-  display:block;
-  width:260px;
-  padding:25px;
-  border-radius:15px;
-  text-decoration:none;
-  color:white;
-  background:rgba(255,255,255,0.08);
-  transition:0.3s;
-}
-
-.mainCard:hover{
-  transform:translateY(-8px);
-  box-shadow:0 0 20px #00ff88;
-}
 
 /* ===== GLOBAL ===== */
 body{
@@ -65,7 +23,7 @@ body{
   100%{background-position:0% 50%;}
 }
 
-/* ===== POKEDEX NAVBAR (NEW) ===== */
+/* ===== NAVBAR ===== */
 .nav{
   position:sticky;
   top:0;
@@ -88,15 +46,7 @@ body{
   color:#00ff88;
 }
 
-<div class="nav">
-<a href="./index.html">Home</a>
-<a href="./survival.html">Survival</a>
-<a href="./gyms.html">Gyms</a>
-<a href="./tournaments.html">Tournaments</a>
-<a href="./events.html">Events</a>
-</div>
-
-/* ===== LEGENDARY ALERT ===== */
+/* ===== ALERT ===== */
 .alert{
   background:linear-gradient(90deg,#ff0000,#ff8800);
   padding:10px;
@@ -162,7 +112,7 @@ h2{
   text-shadow:0 0 10px #00ff88;
 }
 
-/* ===== MAIN FEATURE BUTTONS (NEW) ===== */
+/* ===== FEATURE CARDS ===== */
 .mainButtons{
   display:flex;
   flex-wrap:wrap;
@@ -182,28 +132,6 @@ h2{
   position:relative;
   overflow:hidden;
   box-shadow:0 0 15px rgba(0,255,136,.3);
-}
-
-/* shiny sweep */
-.mainCard::before{
-  content:"";
-  position:absolute;
-  top:-120%;
-  left:-120%;
-  width:200%;
-  height:200%;
-  background:linear-gradient(
-    120deg,
-    transparent,
-    rgba(255,255,255,.35),
-    transparent);
-  transform:rotate(25deg);
-  transition:.6s;
-}
-
-.mainCard:hover::before{
-  top:100%;
-  left:100%;
 }
 
 .mainCard:hover{
@@ -233,12 +161,10 @@ footer{
 
 <body>
 
-<!-- LEGENDARY EVENT BANNER -->
 <div class="alert">
 🔥 Legendary Spawn Event This Weekend!
 </div>
 
-<!-- NAVBAR -->
 <div class="nav">
 <a href="index.html">Home</a>
 <a href="survival.html">Survival</a>
@@ -262,31 +188,29 @@ footer{
 </div>
 </header>
 
-<!-- FEATURE NAVIGATION -->
 <div class="section">
-
 <h2>🎮 Explore Poki Adventure</h2>
 
 <div class="mainButtons">
 
 <a href="tournaments.html" class="mainCard">
 <h3>🏆 Tournaments</h3>
-<p>Compete in official leagues and become Champion.</p>
+<p>Official competitions where trainers rise to Champion.</p>
 </a>
 
 <a href="gyms.html" class="mainCard">
 <h3>🏟 Custom Gyms</h3>
-<p>Earn badges and challenge player gym leaders.</p>
+<p>Challenge unique gym leaders and earn badges.</p>
 </a>
 
 <a href="events.html" class="mainCard">
 <h3>🎉 Custom Events</h3>
-<p>Legendary hunts, casino games, and server events.</p>
+<p>Legendary hunts, casino games, and community challenges.</p>
 </a>
 
 <a href="survival.html" class="mainCard">
 <h3>🌎 Survival World</h3>
-<p>Start with a Shiny starter and your chosen Legendary.</p>
+<p>Begin with a Shiny starter and a Legendary partner.</p>
 </a>
 
 </div>
@@ -296,12 +220,11 @@ footer{
 <h2>🚀 Begin Your Journey</h2>
 
 <div class="join-box">
-<p>✨ Choose a Shiny Starter (Gen 1–9)</p>
-<p>🔥 Select a Legendary Partner</p>
-<p>🎁 Daily Rewards & Dex Rewards</p>
+<p>✨ Shiny Starter (Gen 1–9)</p>
+<p>🔥 Legendary Partner Choice</p>
+<p>🎁 Daily Login & Dex Rewards</p>
 <p>🏆 Become Champion</p>
 </div>
-
 </div>
 
 <footer>
