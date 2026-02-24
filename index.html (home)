@@ -187,34 +187,31 @@ footer {
     <strong>IP:</strong> 64.87.39.105:25732
   </div>
 </header>
-
+  
 <div class="section">
-<h2>✨ Trainer Features</h2>
 
-<div class="features">
+<h2>🎮 Explore Poki Adventure</h2>
 
-<a href="https://discord.gg/VQP8x2uk" class="card">
-  <img src="Gyms.png">
-  <h3>🏆 Custom Gyms</h3>
-  <p>Earn badges and challenge powerful leaders.</p>
+<div class="mainButtons">
+
+<a href="tournaments.html" class="mainCard">
+<h3>🏆 Tournaments</h3>
+<p>Competitive battles and seasonal championships.</p>
 </a>
 
-<a href="https://discord.gg/VQP8x2uk" class="card">
-<img src="ChatGPT Image Feb 22, 2026, 08_14_28 PM.png">
-<h3>⚔️ Tournaments</h3>
-<p>Monthly PvP events and seasonal championships.</p>
+<a href="gyms.html" class="mainCard">
+<h3>🏟 Custom Gyms</h3>
+<p>Challenge leaders and earn your badges.</p>
 </a>
 
-<a href="https://discord.gg/VQP8x2uk" class="card">
-<img src="file_00000000661071fdaeb88ee923aa3a4d.png">
-<h3>🏡 Survival World</h3>
-<p>Build bases and explore with friends.</p>
+<a href="events.html" class="mainCard">
+<h3>🎉 Custom Events</h3>
+<p>Legendary hunts, giveaways, and server events.</p>
 </a>
 
-<a href="https://discord.gg/VQP8x2uk" class="card">
-<img src="IMG_20260220_211942.png">
-<h3>🎁 Custom Events</h3>
-<p>Legendary spawns, giveaways, and adventures.</p>
+<a href="survival.html" class="mainCard">
+<h3>🌎 Survival World</h3>
+<p>Your true Cobblemon adventure begins here.</p>
 </a>
 
 </div>
