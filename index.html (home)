@@ -5,6 +5,48 @@
 <title>Poki Adventure Server</title>
 
 <style>
+/* NAVBAR */
+.nav{
+  background:#000000cc;
+  padding:15px;
+  position:sticky;
+  top:0;
+}
+
+.nav a{
+  color:white;
+  text-decoration:none;
+  margin:0 15px;
+  font-weight:bold;
+}
+
+.nav a:hover{
+  color:#00ff88;
+}
+
+/* MAIN BUTTONS */
+.mainButtons{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:25px;
+}
+
+.mainCard{
+  display:block;
+  width:260px;
+  padding:25px;
+  border-radius:15px;
+  text-decoration:none;
+  color:white;
+  background:rgba(255,255,255,0.08);
+  transition:0.3s;
+}
+
+.mainCard:hover{
+  transform:translateY(-8px);
+  box-shadow:0 0 20px #00ff88;
+}
 
 /* ===== GLOBAL ===== */
 body{
@@ -45,6 +87,14 @@ body{
 .nav a:hover{
   color:#00ff88;
 }
+
+<div class="nav">
+<a href="./index.html">Home</a>
+<a href="./survival.html">Survival</a>
+<a href="./gyms.html">Gyms</a>
+<a href="./tournaments.html">Tournaments</a>
+<a href="./events.html">Events</a>
+</div>
 
 /* ===== LEGENDARY ALERT ===== */
 .alert{
