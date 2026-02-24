@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Survival World | Poki Adventure</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="nav">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="features.html">Features</a>
+<a href="community.html">Community</a>
+<a href="join.html">Join</a>
+</nav>
+
+<div class="page">
+
+<h1>🌎 Poki Adventure</h1>
+
+<p class="big">
+A TRUE Pokémon Adventure inside Minecraft.
+</p>
+
+<h2>✨ Our Mission</h2>
+
+<p>
+🌎 Poki Adventure — Server Vision Statement
+
+At Poki Adventure, our mission is to create a true Pokémon journey inside Minecraft — a world where adventure comes first, fairness matters, and community is the heart of everything we build.
+
+We believe a Cobblemon server should feel like stepping into your own Pokémon region. Every trainer begins their story from humble beginnings, exploring vast biomes, discovering Pokémon naturally, building teams, earning badges, and striving to become Champion. Progress should be meaningful. Victories should feel earned. Growth should come from dedication — not money.
+
+That is why we are proudly NOT pay-to-win.
+We do not sell power. We do not sell advantages.
+Skill, time, strategy, and commitment define success here.
+
+Poki Adventure is built around long-term progression and purpose. From Gen 1–4 inspired gyms to tournaments, legendary encounters, and community-wide events, there will always be another goal to chase and another challenge ahead.
+
+But more importantly, we are building a positive and welcoming community. Pokémon has always been about connection — trading, battling, helping new trainers, and forming rivalries built on respect. Toxicity and negativity have no place here. We are committed to maintaining a friendly environment where every trainer feels welcome.
+
+Our vision is simple:
+
+• A living Pokémon world inside Minecraft
+• Fair and meaningful progression
+• Adventure-driven gameplay
+• Long-term growth and updates
+• A strong, positive community
+
+Poki Adventure isn’t just a server.
+It’s a shared journey.
+
+And we are just getting started.
+
+🚀 Join the adventure. Become a legend.
+</p>
+
+<div class="highlight">
+🚀 Join the Adventure. Become a Legend.
+</div>
+
+</div>
+
+</body>
+</html>
