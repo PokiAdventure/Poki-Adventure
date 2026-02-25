@@ -27,10 +27,9 @@ body{
 .nav{
   position:sticky;
   top:0;
-  background:rgba(0,0,0,.7);
-  backdrop-filter:blur(10px);
+  background:rgba(0,0,0,.75);
+  backdrop-filter:blur(12px);
   padding:14px;
-  z-index:1000;
   box-shadow:0 0 15px #00ff88;
 }
 
@@ -39,12 +38,9 @@ body{
   text-decoration:none;
   margin:0 18px;
   font-weight:bold;
-  transition:.3s;
 }
 
-.nav a:hover{
-  color:#00ff88;
-}
+.nav a:hover{color:#00ff88;}
 
 /* ===== ALERT ===== */
 .alert{
@@ -59,13 +55,23 @@ body{
   50%{opacity:.6;}
 }
 
-/* ===== HEADER ===== */
-header{padding:70px 20px;}
-
-h1{
-  font-size:52px;
-  text-shadow:0 0 20px #00ff88;
+/* ===== HERO IMAGE ===== */
+.hero{
+  height:320px;
+  background:url("images/server-banner.jpg") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:inset 0 0 80px black;
 }
+
+.hero h1{
+  font-size:56px;
+  text-shadow:0 0 25px #00ff88;
+}
+
+/* ===== HEADER TEXT ===== */
+header{padding:40px 20px;}
 
 .divider{
   width:180px;
@@ -112,7 +118,7 @@ h2{
   text-shadow:0 0 10px #00ff88;
 }
 
-/* ===== FEATURE CARDS ===== */
+/* ===== CARDS ===== */
 .mainButtons{
   display:flex;
   flex-wrap:wrap;
@@ -122,21 +128,29 @@ h2{
 
 .mainCard{
   width:260px;
-  padding:25px;
   border-radius:18px;
+  overflow:hidden;
   text-decoration:none;
   color:white;
   background:rgba(255,255,255,.08);
   backdrop-filter:blur(10px);
   transition:.35s;
-  position:relative;
-  overflow:hidden;
   box-shadow:0 0 15px rgba(0,255,136,.3);
+}
+
+.mainCard img{
+  width:100%;
+  height:150px;
+  object-fit:cover;
 }
 
 .mainCard:hover{
   transform:translateY(-12px) scale(1.05);
   box-shadow:0 0 30px #00ff88;
+}
+
+.cardText{
+  padding:18px;
 }
 
 /* ===== JOIN BOX ===== */
@@ -173,11 +187,11 @@ footer{
 <a href="events.html">Events</a>
 </div>
 
+<div class="hero">
+<h1>Poki Adventure</h1>
+</div>
+
 <header>
-<h1>
-  <img src="black masterball.png" alt="Poké Ball" style="width:50px; vertical-align:middle;">
-  Poki Adventure
-</h1>
 <p>Catch • Battle • Explore • Become Champion</p>
 
 <div class="divider"></div>
@@ -197,23 +211,35 @@ footer{
 <div class="mainButtons">
 
 <a href="tournaments.html" class="mainCard">
+<img src="images/tournament.jpg">
+<div class="cardText">
 <h3>🏆 Tournaments</h3>
-<p>Competitive where trainers rise to Champion.</p>
+<p>Competitive battles where trainers rise to Champion.</p>
+</div>
 </a>
 
 <a href="gyms.html" class="mainCard">
+<img src="images/gym.jpg">
+<div class="cardText">
 <h3>🏟 Custom Gyms</h3>
 <p>Challenge unique gym leaders and earn badges.</p>
+</div>
 </a>
 
 <a href="events.html" class="mainCard">
+<img src="images/events.jpg">
+<div class="cardText">
 <h3>🎉 Custom Events</h3>
-<p>Legendary hunts, casino games, and community challenges.</p>
+<p>Legendary hunts and community challenges.</p>
+</div>
 </a>
 
 <a href="survival.html" class="mainCard">
+<img src="images/survival.jpg">
+<div class="cardText">
 <h3>🌎 Survival World</h3>
-<p>Begin with a Shiny starter and a Legendary partner.</p>
+<p>Begin with a Shiny starter and Legendary partner.</p>
+</div>
 </a>
 
 </div>
@@ -223,11 +249,10 @@ footer{
 <h2>🚀 Begin Your Journey</h2>
 
 <div class="join-box">
-<p>1️⃣ Download the Modrinth App</p>
-<p>2️⃣ Install the Cobbleverse Modpack</p>
-<p>3️⃣ Add our Server IP</p>
+<p>1️⃣ Download Modrinth</p>
+<p>2️⃣ Install Cobbleverse</p>
+<p>3️⃣ Add Server IP</p>
 <p><strong>64.87.39.105:25732</strong></p>
-<p>4️⃣ Begin your Pokémon Journey!</p>
 </div>
 </div>
 
