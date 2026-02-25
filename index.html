@@ -6,6 +6,30 @@
 
 <style>
 
+/* ===== GLOBAL ===== */
+body{
+  margin:0;
+  font-family:"Trebuchet MS",Arial;
+  color:white;
+  text-align:center;
+
+  cursor:url("black masterball.png"), auto;
+
+  background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#0f2027);
+  background-size:400% 400%;
+  animation:bgMove 14s ease infinite;
+
+  transition:opacity .3s ease;
+  opacity:0;
+}
+
+@keyframes bgMove{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+/* ===== MUSIC BUTTON ===== */
 .music-btn{
   position:fixed;
   bottom:20px;
@@ -17,32 +41,6 @@
   border-radius:25px;
   cursor:pointer;
   box-shadow:0 0 15px #00ff88;
-}
-  
-body{
-  transition:opacity .3s ease;
-  opacity:0;
-}
-  
-body{
-  cursor:url("black masterball.png"), auto;
-}
-
-/* ===== GLOBAL ===== */
-body{
-  margin:0;
-  font-family:"Trebuchet MS",Arial;
-  color:white;
-  text-align:center;
-  background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#0f2027);
-  background-size:400% 400%;
-  animation:bgMove 14s ease infinite;
-}
-
-@keyframes bgMove{
-  0%{background-position:0% 50%;}
-  50%{background-position:100% 50%;}
-  100%{background-position:0% 50%;}
 }
 
 /* ===== NAVBAR ===== */
@@ -77,7 +75,7 @@ body{
   50%{opacity:.6;}
 }
 
-/* ===== HERO IMAGE ===== */
+/* ===== HERO ===== */
 .hero{
   height:320px;
   background:url("images/server-banner.jpg") center/cover no-repeat;
@@ -92,8 +90,13 @@ body{
   text-shadow:0 0 25px #00ff88;
 }
 
-/* ===== HEADER TEXT ===== */
-header{padding:40px 20px;}
+/* ===== SECTIONS ===== */
+.section{padding:60px 20px;}
+
+h2{
+  font-size:34px;
+  text-shadow:0 0 10px #00ff88;
+}
 
 .divider{
   width:180px;
@@ -132,14 +135,6 @@ header{padding:40px 20px;}
   box-shadow:0 0 15px #00ff88;
 }
 
-/* ===== SECTIONS ===== */
-.section{padding:60px 20px;}
-
-h2{
-  font-size:34px;
-  text-shadow:0 0 10px #00ff88;
-}
-
 /* ===== CARDS ===== */
 .mainButtons{
   display:flex;
@@ -171,49 +166,32 @@ h2{
   box-shadow:0 0 30px #00ff88;
 }
 
-.cardText{
-  padding:18px;
-}
+.cardText{padding:18px;}
 
 /* ===== FLOATING POKEMON ===== */
 .pokemon-bg{
   position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
+  inset:0;
   pointer-events:none;
-  overflow:hidden;
   z-index:-1;
 }
 
 .pokemon-bg img{
   position:absolute;
   width:120px;
-  opacity:0.08;
+  opacity:.08;
   animation:float 25s linear infinite;
 }
 
-.pokemon-bg img:nth-child(1){
-  left:10%;
-  animation-duration:30s;
-}
-
-.pokemon-bg img:nth-child(2){
-  left:50%;
-  animation-duration:22s;
-}
-
-.pokemon-bg img:nth-child(3){
-  left:80%;
-  animation-duration:28s;
-}
+.pokemon-bg img:nth-child(1){left:10%;animation-duration:30s;}
+.pokemon-bg img:nth-child(2){left:50%;animation-duration:22s;}
+.pokemon-bg img:nth-child(3){left:80%;animation-duration:28s;}
 
 @keyframes float{
   from{transform:translateY(110vh);}
   to{transform:translateY(-120vh);}
 }
-  
+
 /* ===== JOIN BOX ===== */
 .join-box{
   max-width:700px;
@@ -234,70 +212,22 @@ footer{
 </style>
 </head>
 
-<script>
-document.querySelectorAll("a").forEach(link=>{
-  if(link.href && link.hostname === window.location.hostname){
-    link.addEventListener("click",function(e){
-      e.preventDefault();
-      document.body.style.opacity="0";
-      setTimeout(()=>{
-        window.location=this.href;
-      },300);
-    });
-  }
-});
-
-window.onload=()=>{
-  document.body.style.opacity="1";
-};
-</script>
-
-<script>
-fetch("https://api.mcsrvstat.us/2/64.87.39.105:25732")
-.then(res=>res.json())
-.then(data=>{
-  const el=document.getElementById("serverStatus");
-
-  if(data.online){
-    el.innerHTML="🟢 Online ("+data.players.online+" players)";
-  }else{
-    el.innerHTML="🔴 Offline";
-  }
-});
-</script>
-  
-<script>
-const music=document.getElementById("bgMusic");
-const btn=document.getElementById("musicBtn");
-
-btn.onclick=()=>{
-  if(music.paused){
-    music.play();
-    btn.textContent="🔊 Music On";
-  }else{
-    music.pause();
-    btn.textContent="🎵 Music";
-  }
-};
-</script>
-  
 <body>
 
+<!-- MUSIC -->
 <button id="musicBtn" class="music-btn">🎵 Music</button>
-
 <audio id="bgMusic" loop>
   <source src="music/adventure-theme.mp3" type="audio/mpeg">
 </audio>
-  
+
+<!-- FLOATING POKEMON -->
 <div class="pokemon-bg">
   <img src="images/pokemon1.png">
   <img src="images/pokemon2.png">
   <img src="images/pokemon3.png">
 </div>
-  
-<div class="alert">
-🔥 Welcome new players!
-</div>
+
+<div class="alert">🔥 Welcome new players!</div>
 
 <div class="nav">
 <a href="index.html">Home</a>
@@ -309,8 +239,8 @@ btn.onclick=()=>{
 
 <div class="hero">
 <h1>
-  <img src="file_00000000b934720c95b64d5963350581.png" alt="Poké Ball" style="width:50px; vertical-align:middle;">
- Poki Adventure
+<img src="file_00000000b934720c95b64d5963350581.png" style="width:50px;vertical-align:middle;">
+Poki Adventure
 </h1>
 </div>
 
@@ -370,7 +300,6 @@ Server Status:
 
 <div class="section">
 <h2>🚀 Begin Your Journey</h2>
-
 <div class="join-box">
 <p>1️⃣ Download Modrinth</p>
 <p>2️⃣ Install Cobbleverse</p>
@@ -382,6 +311,48 @@ Server Status:
 <footer>
 <p>© 2026 Poki Adventure Server — All Trainers Welcome</p>
 </footer>
+
+<!-- SCRIPTS (NOW SAFE) -->
+<script>
+
+/* Fade transition */
+document.querySelectorAll("a").forEach(link=>{
+  if(link.hostname===window.location.hostname){
+    link.addEventListener("click",e=>{
+      e.preventDefault();
+      document.body.style.opacity="0";
+      setTimeout(()=>window.location=link.href,300);
+    });
+  }
+});
+
+window.onload=()=>{document.body.style.opacity="1";};
+
+/* Server status */
+fetch("https://api.mcsrvstat.us/2/64.87.39.105:25732")
+.then(r=>r.json())
+.then(data=>{
+  const el=document.getElementById("serverStatus");
+  el.innerHTML=data.online
+    ? "🟢 Online ("+data.players.online+" players)"
+    : "🔴 Offline";
+});
+
+/* Music toggle */
+const music=document.getElementById("bgMusic");
+const btn=document.getElementById("musicBtn");
+
+btn.onclick=()=>{
+  if(music.paused){
+    music.play();
+    btn.textContent="🔊 Music On";
+  }else{
+    music.pause();
+    btn.textContent="🎵 Music";
+  }
+};
+
+</script>
 
 </body>
 </html>
