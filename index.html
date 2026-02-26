@@ -6,6 +6,67 @@
 
 <style>
 
+/* ===== POKEDEX BUTTON ===== */
+#pokedexBtn{
+  position:fixed;
+  left:20px;
+  bottom:20px;
+  width:65px;
+  height:65px;
+  background:linear-gradient(#ff2b2b,#b30000);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+  cursor:pointer;
+  box-shadow:0 0 20px red;
+  z-index:2000;
+  transition:.3s;
+}
+
+#pokedexBtn:hover{
+  transform:scale(1.1);
+}
+
+/* ===== POKEDEX MENU ===== */
+#pokedexMenu{
+  position:fixed;
+  left:-320px;
+  top:0;
+  width:300px;
+  height:100%;
+  background:linear-gradient(#cc0000,#660000);
+  box-shadow:0 0 30px red;
+  padding-top:80px;
+  transition:.4s ease;
+  z-index:1999;
+}
+
+#pokedexMenu.open{
+  left:0;
+}
+
+#pokedexMenu h2{
+  margin-bottom:30px;
+  text-shadow:0 0 10px white;
+}
+
+#pokedexMenu a{
+  display:block;
+  color:white;
+  text-decoration:none;
+  padding:18px;
+  font-size:20px;
+  transition:.25s;
+}
+
+#pokedexMenu a:hover{
+  background:rgba(255,255,255,.15);
+  padding-left:28px;
+}
+  
+
 /* ===== GLOBAL ===== */
 body{
   margin:0;
@@ -214,6 +275,21 @@ footer{
 
 <body>
 
+<!-- POKEDEX BUTTON -->
+<div id="pokedexBtn">📕</div>
+
+<div id="pokedexMenu">
+
+<h2>Pokédex Menu</h2>
+
+<a href="index.html">🏠 Home</a>
+<a href="survival.html">🌎 Survival</a>
+<a href="gyms.html">🏟 Gyms</a>
+<a href="tournaments.html">🏆 Tournaments</a>
+<a href="events.html">🎉 Events</a>
+
+</div>
+  
 <!-- MUSIC -->
 <button id="musicBtn" class="music-btn">🎵 Music</button>
 <audio id="bgMusic" loop>
@@ -308,49 +384,84 @@ Server Status:
 </div>
 </div>
 
+/* POKEDEX TOGGLE */
+const pokedexBtn = document.getElementById("pokedexBtn");
+const pokedexMenu = document.getElementById("pokedexMenu");
+
+pokedexBtn.onclick = () => {
+  pokedexMenu.classList.toggle("open");
+};
+
+  
 <footer>
 <p>© 2026 Poki Adventure Server — All Trainers Welcome</p>
 </footer>
 
-<!-- SCRIPTS (NOW SAFE) -->
+<!-- ===== SCRIPTS ===== -->
 <script>
 
-/* Fade transition */
+/* ---------- PAGE FADE TRANSITION ---------- */
 document.querySelectorAll("a").forEach(link=>{
-  if(link.hostname===window.location.hostname){
-    link.addEventListener("click",e=>{
+  if(link.hostname === window.location.hostname){
+    link.addEventListener("click", e=>{
       e.preventDefault();
       document.body.style.opacity="0";
-      setTimeout(()=>window.location=link.href,300);
+      setTimeout(()=>{ window.location = link.href; },300);
     });
   }
 });
 
-window.onload=()=>{document.body.style.opacity="1";};
+window.onload = ()=>{
+  document.body.style.opacity="1";
+};
 
-/* Server status */
+
+/* ---------- SERVER STATUS ---------- */
 fetch("https://api.mcsrvstat.us/2/64.87.39.105:25732")
-.then(r=>r.json())
+.then(response => response.json())
 .then(data=>{
-  const el=document.getElementById("serverStatus");
-  el.innerHTML=data.online
-    ? "🟢 Online ("+data.players.online+" players)"
-    : "🔴 Offline";
+  const el = document.getElementById("serverStatus");
+
+  if(!el) return;
+
+  if(data.online){
+    el.innerHTML = "🟢 Online (" + data.players.online + " players)";
+  }else{
+    el.innerHTML = "🔴 Offline";
+  }
+})
+.catch(()=>{
+  const el = document.getElementById("serverStatus");
+  if(el) el.innerHTML = "⚠ Status Unavailable";
 });
 
-/* Music toggle */
-const music=document.getElementById("bgMusic");
-const btn=document.getElementById("musicBtn");
 
-btn.onclick=()=>{
-  if(music.paused){
-    music.play();
-    btn.textContent="🔊 Music On";
-  }else{
-    music.pause();
-    btn.textContent="🎵 Music";
-  }
-};
+/* ---------- MUSIC TOGGLE ---------- */
+const music = document.getElementById("bgMusic");
+const btn = document.getElementById("musicBtn");
+
+if(btn && music){
+  btn.onclick = ()=>{
+    if(music.paused){
+      music.play();
+      btn.textContent = "🔊 Music On";
+    }else{
+      music.pause();
+      btn.textContent = "🎵 Music";
+    }
+  };
+}
+
+
+/* ---------- POKEDEX MENU ---------- */
+const pokedexBtn = document.getElementById("pokedexBtn");
+const pokedexMenu = document.getElementById("pokedexMenu");
+
+if(pokedexBtn && pokedexMenu){
+  pokedexBtn.onclick = ()=>{
+    pokedexMenu.classList.toggle("open");
+  };
+}
 
 </script>
 
