@@ -6,82 +6,21 @@
 
 <style>
 
-/* ===== POKEDEX BUTTON ===== */
-#pokedexBtn{
-  position:fixed;
-  left:20px;
-  bottom:20px;
-  width:65px;
-  height:65px;
-  background:linear-gradient(#ff2b2b,#b30000);
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:28px;
-  cursor:pointer;
-  box-shadow:0 0 20px red;
-  z-index:2000;
-  transition:.3s;
-}
+/* ---------------- GLOBAL ---------------- */
 
-#pokedexBtn:hover{
-  transform:scale(1.1);
-}
-
-/* ===== POKEDEX MENU ===== */
-#pokedexMenu{
-  position:fixed;
-  left:-320px;
-  top:0;
-  width:300px;
-  height:100%;
-  background:linear-gradient(#cc0000,#660000);
-  box-shadow:0 0 30px red;
-  padding-top:80px;
-  transition:.4s ease;
-  z-index:1999;
-}
-
-#pokedexMenu.open{
-  left:0;
-}
-
-#pokedexMenu h2{
-  margin-bottom:30px;
-  text-shadow:0 0 10px white;
-}
-
-#pokedexMenu a{
-  display:block;
-  color:white;
-  text-decoration:none;
-  padding:18px;
-  font-size:20px;
-  transition:.25s;
-}
-
-#pokedexMenu a:hover{
-  background:rgba(255,255,255,.15);
-  padding-left:28px;
-}
-  
-
-/* ===== GLOBAL ===== */
 body{
   margin:0;
   font-family:"Trebuchet MS",Arial;
   color:white;
   text-align:center;
-
   cursor:url("black masterball.png"), auto;
 
   background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#0f2027);
   background-size:400% 400%;
   animation:bgMove 14s ease infinite;
 
-  transition:opacity .3s ease;
   opacity:0;
+  transition:opacity .3s;
 }
 
 @keyframes bgMove{
@@ -90,69 +29,9 @@ body{
   100%{background-position:0% 50%;}
 }
 
-/* ===== MUSIC BUTTON ===== */
-.music-btn{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#111;
-  color:white;
-  border:2px solid #00ff88;
-  padding:12px 18px;
-  border-radius:25px;
-  cursor:pointer;
-  box-shadow:0 0 15px #00ff88;
+.section{
+  padding:60px 20px;
 }
-
-/* ===== NAVBAR ===== */
-.nav{
-  position:sticky;
-  top:0;
-  background:rgba(0,0,0,.75);
-  backdrop-filter:blur(12px);
-  padding:14px;
-  box-shadow:0 0 15px #00ff88;
-}
-
-.nav a{
-  color:white;
-  text-decoration:none;
-  margin:0 18px;
-  font-weight:bold;
-}
-
-.nav a:hover{color:#00ff88;}
-
-/* ===== ALERT ===== */
-.alert{
-  background:linear-gradient(90deg,#ff0000,#ff8800);
-  padding:10px;
-  font-weight:bold;
-  animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-  0%,100%{opacity:1;}
-  50%{opacity:.6;}
-}
-
-/* ===== HERO ===== */
-.hero{
-  height:320px;
-  background:url("images/server-banner.jpg") center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:inset 0 0 80px black;
-}
-
-.hero h1{
-  font-size:56px;
-  text-shadow:0 0 25px #00ff88;
-}
-
-/* ===== SECTIONS ===== */
-.section{padding:60px 20px;}
 
 h2{
   font-size:34px;
@@ -167,7 +46,45 @@ h2{
   border-radius:5px;
 }
 
-/* ===== BUTTONS ===== */
+/* ---------------- NAVBAR ---------------- */
+
+.nav{
+  position:sticky;
+  top:0;
+  background:rgba(0,0,0,.75);
+  padding:14px;
+  backdrop-filter:blur(12px);
+}
+
+.nav a{
+  color:white;
+  text-decoration:none;
+  margin:0 18px;
+  font-weight:bold;
+}
+
+.nav a:hover{
+  color:#00ff88;
+}
+
+/* ---------------- HERO ---------------- */
+
+.hero{
+  height:320px;
+  background:url("images/server-banner.jpg") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:inset 0 0 80px black;
+}
+
+.hero h1{
+  font-size:56px;
+  text-shadow:0 0 25px #00ff88;
+}
+
+/* ---------------- BUTTONS ---------------- */
+
 .button{
   display:inline-block;
   margin:12px;
@@ -177,15 +94,14 @@ h2{
   color:white;
   text-decoration:none;
   font-weight:bold;
-  transition:.3s;
 }
 
 .button:hover{
   transform:scale(1.08);
-  box-shadow:0 0 20px #ffcc00;
 }
 
-/* ===== STATUS ===== */
+/* ---------------- SERVER STATUS ---------------- */
+
 .status{
   background:rgba(0,0,0,.5);
   padding:18px 30px;
@@ -193,10 +109,10 @@ h2{
   display:inline-block;
   margin-top:20px;
   border:2px solid #00ff88;
-  box-shadow:0 0 15px #00ff88;
 }
 
-/* ===== CARDS ===== */
+/* ---------------- MAIN CARDS ---------------- */
+
 .mainButtons{
   display:flex;
   flex-wrap:wrap;
@@ -213,7 +129,6 @@ h2{
   background:rgba(255,255,255,.08);
   backdrop-filter:blur(10px);
   transition:.35s;
-  box-shadow:0 0 15px rgba(0,255,136,.3);
 }
 
 .mainCard img{
@@ -223,47 +138,51 @@ h2{
 }
 
 .mainCard:hover{
-  transform:translateY(-12px) scale(1.05);
-  box-shadow:0 0 30px #00ff88;
+  transform:translateY(-10px) scale(1.05);
 }
 
-.cardText{padding:18px;}
-
-/* ===== FLOATING POKEMON ===== */
-.pokemon-bg{
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  z-index:-1;
+.cardText{
+  padding:18px;
 }
 
-.pokemon-bg img{
-  position:absolute;
-  width:120px;
-  opacity:.08;
-  animation:float 25s linear infinite;
+/* ---------------- VIDEO SECTION ---------------- */
+
+.video-grid{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:30px;
 }
 
-.pokemon-bg img:nth-child(1){left:10%;animation-duration:30s;}
-.pokemon-bg img:nth-child(2){left:50%;animation-duration:22s;}
-.pokemon-bg img:nth-child(3){left:80%;animation-duration:28s;}
-
-@keyframes float{
-  from{transform:translateY(110vh);}
-  to{transform:translateY(-120vh);}
+.video-grid iframe{
+  width:420px;
+  height:240px;
+  border-radius:12px;
+  border:3px solid #00ff88;
 }
 
-/* ===== JOIN BOX ===== */
-.join-box{
-  max-width:700px;
+/* ---------------- GALLERY ---------------- */
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  max-width:1100px;
   margin:auto;
-  background:rgba(0,0,0,.45);
-  padding:30px;
-  border-radius:15px;
-  box-shadow:0 0 20px rgba(0,255,136,.4);
 }
 
-/* ===== FOOTER ===== */
+.gallery img{
+  width:100%;
+  border-radius:12px;
+  transition:.3s;
+}
+
+.gallery img:hover{
+  transform:scale(1.05);
+}
+
+/* ---------------- FOOTER ---------------- */
+
 footer{
   background:rgba(0,0,0,.7);
   padding:25px;
@@ -275,36 +194,7 @@ footer{
 
 <body>
 
-<!-- POKEDEX BUTTON -->
-<div id="pokedexBtn">📕</div>
-
-<div id="pokedexMenu">
-
-<h2>Pokédex Menu</h2>
-
-<a href="index.html">🏠 Home</a>
-<a href="survival.html">🌎 Survival</a>
-<a href="gyms.html">🏟 Gyms</a>
-<a href="tournaments.html">🏆 Tournaments</a>
-<a href="events.html">🎉 Events</a>
-
-</div>
-  
-<!-- MUSIC -->
-<button id="musicBtn" class="music-btn">🎵 Music</button>
-<audio id="bgMusic" loop>
-  <source src="Pokémon - Gotta Catch'em All! (8-Bit Version) [No Copyright Music].mp3" type="audio/mpeg">
-</audio>
-
-<!-- FLOATING POKEMON -->
-<div class="pokemon-bg">
-  <img src="shiny-mew-png.png">
-  <img src="250px-0157Typhlosion.png">
-  <img src="mewtwo-hd-.png">
-</div>
-
-<div class="alert">🔥 Welcome new players! Server will be ready 3/15/26</div>
-
+<!-- NAV -->
 <div class="nav">
 <a href="index.html">Home</a>
 <a href="survival.html">Survival</a>
@@ -313,14 +203,13 @@ footer{
 <a href="events.html">Events</a>
 </div>
 
+<!-- HERO -->
 <div class="hero">
-<h1>
-<img src="file_00000000b934720c95b64d5963350581.png" style="width:50px;vertical-align:middle;">
-Poki Adventure
-</h1>
+<h1>Poki Adventure</h1>
 </div>
 
 <header>
+
 <p>Catch • Battle • Explore • Become Champion</p>
 
 <div class="divider"></div>
@@ -329,12 +218,14 @@ Poki Adventure
 <a class="button" href="https://discord.gg/bXR4yEM4">💬 Join Discord</a>
 
 <div class="status">
-Server Status:
-<span id="serverStatus">Checking...</span>
+Server Status: <span id="serverStatus">Checking...</span>
 </div>
+
 </header>
 
+<!-- EXPLORE -->
 <div class="section">
+
 <h2>🎮 Explore Poki Adventure</h2>
 
 <div class="mainButtons">
@@ -374,94 +265,81 @@ Server Status:
 </div>
 </div>
 
+<!-- VIDEOS -->
 <div class="section">
+
+<h2>🎥 Server Videos</h2>
+
+<div class="divider"></div>
+
+<div class="video-grid">
+
+<iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+
+</div>
+
+</div>
+
+<!-- GALLERY -->
+<div class="section">
+
+<h2>📸 Server Gallery</h2>
+
+<div class="divider"></div>
+
+<div class="gallery">
+
+<img src="images/server1.jpg">
+<img src="images/server2.jpg">
+<img src="images/server3.jpg">
+<img src="images/server4.jpg">
+
+</div>
+
+</div>
+
+<!-- JOIN -->
+<div class="section">
+
 <h2>🚀 Begin Your Journey</h2>
-<div class="join-box">
+
+<div class="status">
+
 <p>1️⃣ Download Modrinth</p>
 <p>2️⃣ Install Cobbleverse</p>
 <p>3️⃣ Add Server IP</p>
+
 <p><strong>64.87.39.105:25732</strong></p>
+
 </div>
+
 </div>
 
-/* POKEDEX TOGGLE */
-const pokedexBtn = document.getElementById("pokedexBtn");
-const pokedexMenu = document.getElementById("pokedexMenu");
-
-pokedexBtn.onclick = () => {
-  pokedexMenu.classList.toggle("open");
-};
-
-  
 <footer>
 <p>© 2026 Poki Adventure Server — All Trainers Welcome</p>
 </footer>
 
-<!-- ===== SCRIPTS ===== -->
 <script>
 
-/* ---------- PAGE FADE TRANSITION ---------- */
-document.querySelectorAll("a").forEach(link=>{
-  if(link.hostname === window.location.hostname){
-    link.addEventListener("click", e=>{
-      e.preventDefault();
-      document.body.style.opacity="0";
-      setTimeout(()=>{ window.location = link.href; },300);
-    });
-  }
-});
-
-window.onload = ()=>{
+/* PAGE FADE */
+window.onload = () => {
   document.body.style.opacity="1";
 };
 
+/* SERVER STATUS */
 
-/* ---------- SERVER STATUS ---------- */
 fetch("https://api.mcsrvstat.us/2/64.87.39.105:25732")
-.then(response => response.json())
+.then(res=>res.json())
 .then(data=>{
-  const el = document.getElementById("serverStatus");
-
-  if(!el) return;
+  const el=document.getElementById("serverStatus");
 
   if(data.online){
-    el.innerHTML = "🟢 Online (" + data.players.online + " players)";
+    el.innerHTML="🟢 Online ("+data.players.online+" players)";
   }else{
-    el.innerHTML = "🔴 Offline";
+    el.innerHTML="🔴 Offline";
   }
-})
-.catch(()=>{
-  const el = document.getElementById("serverStatus");
-  if(el) el.innerHTML = "⚠ Status Unavailable";
 });
-
-
-/* ---------- MUSIC TOGGLE ---------- */
-const music = document.getElementById("bgMusic");
-const btn = document.getElementById("musicBtn");
-
-if(btn && music){
-  btn.onclick = ()=>{
-    if(music.paused){
-      music.play();
-      btn.textContent = "🔊 Music On";
-    }else{
-      music.pause();
-      btn.textContent = "🎵 Music";
-    }
-  };
-}
-
-
-/* ---------- POKEDEX MENU ---------- */
-const pokedexBtn = document.getElementById("pokedexBtn");
-const pokedexMenu = document.getElementById("pokedexMenu");
-
-if(pokedexBtn && pokedexMenu){
-  pokedexBtn.onclick = ()=>{
-    pokedexMenu.classList.toggle("open");
-  };
-}
 
 </script>
 
